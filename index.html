@@ -9,7 +9,16 @@
 </head>
 <body>
   <div id="root">
-    
+    <div class="searchbar">
+      <i class="fas fa-search"></i>
+      <input v-model="inputSearch" type="text" placeholder="Cerca..." @keyup.enter="search">
+    </div>
+    <div v-for="risultato in risultati">
+      <span>{{ risultato.title }}</span>
+      <span>{{ risultato.original_title }}</span>
+      <span>{{ risultato.original_language }}</span>
+      <span>{{ risultato.vote_average }}</span>
+    </div>
   </div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.20.0/axios.min.js" charset="utf-8"></script>
   <script src="https://cdn.jsdelivr.net/npm/vue"></script>

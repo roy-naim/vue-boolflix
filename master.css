@@ -1,0 +1,23 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+.searchbar {
+  margin: 15px
+}
+
+.searchbar {
+  background-color: #fff;
+  border-radius: 20px;
+  border: 1px solid blue;
+  padding: 10px;
+  width: 150px;
+}
+
+.searchbar input {
+  border-style:none;
+  padding: 5px 0;
+  width: 80%;
+  outline: none;
+}
