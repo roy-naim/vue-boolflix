@@ -1,6 +1,5 @@
 Vue.config.devtools = true;
-import Vue from "vue";
-import VueFlags from "@growthbunker/vueflags";
+
 
 var app = new Vue(
   {
@@ -15,6 +14,7 @@ var app = new Vue(
 
   methods: {
     search: function () {
+      this.risultati = []
       axios.get(`${this.uri}/search/movie?api_key=${this.api_key}&query=${this.inputSearch}&language=${this.language}`)
         .then((response) =>{
           // console.log(response.data.results);
@@ -43,18 +43,8 @@ var app = new Vue(
       }
     },
 
-    getOriginalLanguage: function (obj) {
-      if (obj.original_language) {
-        return obj.original_language
-      } else {
-        return obj.original_language
-      }
-    },
-
     getVoteAverage: function (obj) {
       if (obj.vote_average) {
-        return obj.vote_average
-      } else {
         return obj.vote_average
       }
     },

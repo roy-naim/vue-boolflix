@@ -24,14 +24,19 @@
       <div v-for="result in risultati" class="result">
         <span>{{ getTitle(result) }}</span>
         <span>{{ getOriginalTitle(result) }}</span>
-        <span>{{ getOriginalLanguage(result) }}</span>
+        <span><img
+          v-if="(result.original_language) == 'en'"
+          :src="`https://www.countryflags.io/gb/flat/64.png`">
+          <img
+            v-else
+            :src="`https://www.countryflags.io/${result.original_language}/flat/64.png`">
+        </span>
         <span>{{ getVoteAverage(result) }}</span>
       </div>
     </div>
 
   </div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.20.0/axios.min.js" charset="utf-8"></script>
-  <script src="https://cdn.jsdelivr.net/npm/vueflags@latest/dist/vueflags.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/vue"></script>
   <script src="./main.js" charset="utf-8"></script>
 </body>
