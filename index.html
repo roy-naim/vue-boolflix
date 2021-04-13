@@ -5,21 +5,30 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="icon" href="./img/boolflix-logo.png" type="img/icon type">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
   <link rel="stylesheet" href="./master.css">
   <title>Boolflix</title>
 </head>
 <body>
   <div id="root">
-    <div class="searchbar">
-      <i class="fas fa-search"></i>
-      <input v-model="inputSearch" type="text" placeholder="Cerca..." @keyup.enter="search">
+    <header>
+      <div class="boolflix-lg">
+        <img src="./img/boolflix-lg.png" alt="boolflix lg">
+      </div>
+      <div class="searchbar">
+        <i class="fas fa-search"></i>
+        <input v-model="inputSearch" type="text" placeholder="Cerca..." @keyup.enter="search">
+      </div>
+    </header>
+    <div class="container-results">
+      <div v-for="result in risultati" class="result">
+        <span>{{ getTitle(result) }}</span>
+        <span>{{ getOriginalTitle(result) }}</span>
+        <span>{{ getOriginalLanguage(result) }}</span>
+        <span>{{ getVoteAverage(result) }}</span>
+      </div>
     </div>
-    <div v-for="risultato in risultati">
-      <span>{{ risultato.title }}</span>
-      <span>{{ risultato.original_title }}</span>
-      <span>{{ risultato.original_language }}</span>
-      <span>{{ risultato.vote_average }}</span>
-    </div>
+
   </div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.20.0/axios.min.js" charset="utf-8"></script>
   <script src="https://cdn.jsdelivr.net/npm/vue"></script>
