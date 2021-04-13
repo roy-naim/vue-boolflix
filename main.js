@@ -1,4 +1,6 @@
 Vue.config.devtools = true;
+import Vue from "vue";
+import VueFlags from "@growthbunker/vueflags";
 
 var app = new Vue(
   {
