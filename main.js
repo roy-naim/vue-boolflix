@@ -48,5 +48,22 @@ var app = new Vue(
         return obj.vote_average
       }
     },
+
+    starsFull: function (rate){
+      if (rate == 0) {
+        return undefined;
+      }
+      return Math.round(rate/2);
+    },
+
+    starsEmpty: function (rate) {
+      if (rate == 0) {
+        return undefined;
+      }
+      let rateRounding = Math.round(rate/2);
+      let stelleVuote = 5 - rateRounding;
+
+      return stelleVuote;
+    },
   }
 });

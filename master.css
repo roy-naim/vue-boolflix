@@ -50,6 +50,7 @@ header {
   padding: 15px;
   background-color: #344056;
   width: calc(100%/6 - 15px);
+  height: 455px;
 }
 
 .info span {
@@ -81,4 +82,8 @@ header {
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+
+.gold {
+  color: gold;
 }

@@ -40,6 +40,10 @@
               v-else
               :src="`https://www.countryflags.io/${result.original_language}/flat/64.png`">
           </span>
+          <span class="stars">
+            <i class="fas fa-star gold" v-for="superstar in starsFull(result.vote_average)"></i>
+            <i class="fas fa-star" v-for="superstar in starsEmpty(result.vote_average)"></i>
+          </span>
           <span>{{ getVoteAverage(result) }}</span>
         </div>
       </div>
