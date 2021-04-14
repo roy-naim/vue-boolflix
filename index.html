@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="icon" href="./img/boolflix-logo.png" type="img/icon type">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
   <link rel="stylesheet" href="./master.css">
   <title>Boolflix</title>
@@ -22,18 +24,25 @@
     </header>
     <div class="container-results">
       <div v-for="result in risultati" class="result">
-        <span>{{ getTitle(result) }}</span>
-        <span>{{ getOriginalTitle(result) }}</span>
-        <span><img
-          v-if="(result.original_language) == 'en'"
-          :src="`https://www.countryflags.io/gb/flat/64.png`">
-          <img
-            v-else
-            :src="`https://www.countryflags.io/${result.original_language}/flat/64.png`">
-        </span>
-        <span>{{ getVoteAverage(result) }}</span>
+        <div
+          class="poster"
+          :style="`background-image: url('https://image.tmdb.org/t/p/w342/${result.poster_path}')`"
+          >
+        </div>
+        <div class="info">
+          <h3>{{ getTitle(result) }}</h3>
+          <span>{{ getOriginalTitle(result) }}</span>
+          <span>
+            <img
+            v-if="(result.original_language) == 'en'"
+            :src="`https://www.countryflags.io/gb/flat/64.png`">
+            <img
+              v-else
+              :src="`https://www.countryflags.io/${result.original_language}/flat/64.png`">
+          </span>
+          <span>{{ getVoteAverage(result) }}</span>
+        </div>
       </div>
-    </div>
 
   </div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.20.0/axios.min.js" charset="utf-8"></script>
