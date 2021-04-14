@@ -15,7 +15,7 @@ header {
   padding: 10px;
   display: flex;
   justify-content: space-between;
-  background-color: darkgrey;
+  background-color: #000;
 }
 
 .boolflix-lg img {
@@ -28,9 +28,9 @@ header {
 
 .searchbar {
   background-color: #fff;
-  border-radius: 20px;
-  border: 1px solid blue;
-  padding: 10px;
+  border-radius: 35px;
+  /* border: 1px solid blue; */
+  padding: 15px 10px;
   width: 150px;
 }
 

@@ -65,5 +65,11 @@ var app = new Vue(
 
       return stelleVuote;
     },
+
+    getOverview: function (obj) {
+      if (obj.overview) {
+        return obj.overview
+      }
+    },
   }
 });
