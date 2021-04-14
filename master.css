@@ -4,7 +4,9 @@
 }
 
 body {
-  background-color: grey;
+  background-image: url('./img/pattern-bg-02.png');
+  background-size: auto;
+  background-repeat: repeat;
   color: white;
   font-family: 'Lato', sans-serif;
 }
