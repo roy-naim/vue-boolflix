@@ -86,6 +86,10 @@ header {
   justify-content: center;
 }
 
+.result:hover .overview{
+  overflow-y: scroll;
+}
+
 .gold {
   color: gold;
 }
