@@ -86,8 +86,8 @@ header {
   justify-content: center;
 }
 
-.result:hover .overview{
-  overflow-y: scroll;
+.overview::-webkit-scrollbar-thumb:hover{
+  background-color: blue;
 }
 
 .gold {
